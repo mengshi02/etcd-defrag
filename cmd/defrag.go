@@ -6,13 +6,13 @@ import (
 )
 
 func main() {
-	err := etcd_defrag.Clean(
+	err := etcd_defrag.Run(
 		[]string{
-			"https://",
+			"https://127.0.0.1:4001",
 		},
-		"./certificate/cert.",
-		"./certificate/cert.",
-		"./certificate/cert.",
+		"./certificate/service.cert",
+		"./certificate/service.key",
+		"./certificate/ca.cert",
 	)
 	if err != nil {
 		fmt.Printf("clean failure: %s\n", err.Error())

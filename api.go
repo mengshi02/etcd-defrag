@@ -1,6 +1,6 @@
 package etcd_defrag
 
-func Clean(endpoints []string, cert, key, trusted string) error {
+func Run(endpoints []string, cert, key, trusted string) error {
 	ca := NewCA(cert, key, trusted)
 	cfg, err := ca.GetConfig()
 	if err != nil {

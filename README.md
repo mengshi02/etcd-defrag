@@ -6,7 +6,7 @@ An etcd data defragmentation tool
 clean etcd data
 
 ```go
-err := etcd_defrag.Clean(
+err := etcd_defrag.Run(
     []string{
         "https://127.0.0.1:4001",
     },
