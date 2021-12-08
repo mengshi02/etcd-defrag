@@ -31,10 +31,12 @@ func NewDefrag(ep []string, cfg *tls.Config) (*Defrag, error) {
 
 func (d *Defrag) Clean() error {
 	for _, endpoint := range d.Endpoints {
-		ctx, _ := context.WithTimeout(context.TODO(), time.Duration(5))
+		ctx, cancel := context.WithTimeout(context.TODO(), time.Second*10)
 		if err := defrag(ctx, d.Client, endpoint); err != nil {
+			cancel()
 			return err
 		}
+		cancel()
 	}
 	return nil
 }

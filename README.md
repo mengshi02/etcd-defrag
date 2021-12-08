@@ -1,5 +1,5 @@
 # etcd-defrag
-An etcd data defragmentation tool
+An etcd data defragmentation tool for v3
 
 ## Example
 
