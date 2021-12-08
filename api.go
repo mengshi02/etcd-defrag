@@ -12,3 +12,11 @@ func Run(endpoints []string, cert, key, trusted string) error {
 	}
 	return defrag.Clean()
 }
+
+func RunWithoutCA(endpoints []string) error {
+	defrag, err := NewDefrag(endpoints, nil)
+	if  err != nil {
+		return err
+	}
+	return defrag.Clean()
+}
